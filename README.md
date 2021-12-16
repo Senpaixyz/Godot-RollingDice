@@ -28,9 +28,11 @@ Download [Godo Game Engine](https://godotengine.org/) to this their own website 
 ## Game Mechanics
 
 This is the prompt scene where the user choose if they want to create a new game or continue the previous progress.
+***
 ![N|Solid](https://github.com/Senpaixyz/Godot-RollingDice/blob/master/screenshots/image1.JPG?raw=true)
 
 This scene where the user choose the colors from BLUE, YELLOW and RED. After the user choose the color the user bet the amount from 5,10,20 or ALL. All the amount that the user bet will be double if the user WIN that deduct from the Dealer money. Then if the user lose the game the bet amount will be deducted from the user money and give to the dealer money.
+***
 ![N|Solid](https://github.com/Senpaixyz/Godot-RollingDice/blob/master/screenshots/image2.JPG?raw=true)
 
 #### WIN NOTIFICATION
