@@ -1,0 +1,71 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://script/Main.gd" type="Script" id=1]
+[ext_resource path="res://Scene/Die.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scene/BettingBox.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scene/Player_Box.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scene/HUD.tscn" type="PackedScene" id=5]
+[ext_resource path="res://asset/tile.png" type="Texture" id=6]
+
+[sub_resource type="OccluderPolygon2D" id=1]
+polygon = PoolVector2Array( 0, 0, 320, 0, 320, 320, 0, 320 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 0, 0, 320, 0, 320, 320, 0, 320 )
+
+[sub_resource type="TileSet" id=3]
+0/name = "tile.png 0"
+0/texture = ExtResource( 6 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 320, 320 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/occluder = SubResource( 1 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[node name="Main" type="Node2D"]
+position = Vector2( 8.5918, 0 )
+script = ExtResource( 1 )
+
+[node name="Die" parent="." instance=ExtResource( 2 )]
+position = Vector2( 209.822, 318.573 )
+mass = 2.18673
+gravity_scale = -1.64
+contacts_reported = 1
+contact_monitor = true
+sleeping = true
+
+[node name="Start" type="Timer" parent="Die"]
+
+[node name="BettingBox" parent="." instance=ExtResource( 3 )]
+position = Vector2( 212.005, 586.644 )
+scale = Vector2( 0.9, 0.8 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 124.588, 653.691 )
+
+[node name="HUD" parent="." instance=ExtResource( 5 )]
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2( 0.2, 0.2 )
+z_index = -1
+tile_set = SubResource( 3 )
+cell_size = Vector2( 160, 160 )
+format = 1
+tile_data = PoolIntArray( -2, 0, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, -65527, 0, 0, -65526, 0, 0, -65525, 0, 0, -65524, 0, 0, -65523, 0, 0, 65534, 0, 0, 13, 0, 0, 131070, 0, 0, 65549, 0, 0, 196606, 0, 0, 131085, 0, 0, 262142, 0, 0, 196621, 0, 0, 327678, 0, 0, 262157, 0, 0, 393214, 0, 0, 327693, 0, 0, 458750, 0, 0, 393229, 0, 0, 524286, 0, 0, 458765, 0, 0, 589822, 0, 0, 524301, 0, 0, 655358, 0, 0, 589837, 0, 0, 720894, 0, 0, 655373, 0, 0, 786430, 0, 0, 720909, 0, 0, 851966, 0, 0, 786445, 0, 0, 917502, 0, 0, 851981, 0, 0, 983038, 0, 0, 917517, 0, 0, 1048574, 0, 0, 983053, 0, 0, 1114110, 0, 0, 1048577, 0, 0, 1048579, 0, 0, 1048580, 0, 0, 1048581, 0, 0, 1048582, 0, 0, 1048583, 0, 0, 1048584, 0, 0, 1048585, 0, 0, 1048586, 0, 0, 1048589, 0, 0, 1179646, 0, 0, 1114113, 0, 0, 1114122, 0, 0, 1114125, 0, 0, 1245182, 0, 0, 1179649, 0, 0, 1179658, 0, 0, 1179661, 0, 0, 1310718, 0, 0, 1245185, 0, 0, 1245187, 0, 0, 1245188, 0, 0, 1245193, 0, 0, 1245194, 0, 0, 1245197, 0, 0, 1376254, 0, 0, 1376255, 0, 0, 1310720, 0, 0, 1310724, 0, 0, 1310725, 0, 0, 1310726, 0, 0, 1310727, 0, 0, 1310728, 0, 0, 1310729, 0, 0, 1310732, 0, 0, 1310733, 0, 0, 1441790, 0, 0, 1376256, 0, 0, 1376257, 0, 0, 1376258, 0, 0, 1376259, 0, 0, 1376260, 0, 0, 1376268, 0, 0, 1376269, 0, 0, 1507326, 0, 0, 1441792, 0, 0, 1441793, 0, 0, 1441794, 0, 0, 1441795, 0, 0, 1441796, 0, 0, 1441797, 0, 0, 1441798, 0, 0, 1441799, 0, 0, 1441800, 0, 0, 1441801, 0, 0, 1441802, 0, 0, 1441803, 0, 0, 1441804, 0, 0, 1441805, 0, 0 )
+[connection signal="roll_dice" from="." to="." method="_on_Main_roll_dice"]
+[connection signal="timeout" from="Die/Start" to="." method="_on_Start_timeout"]
+[connection signal="color_choosed" from="BettingBox" to="." method="_on_BettingBox_color_choosed"]
+[connection signal="amount_choiced" from="Player" to="." method="_on_Amount_amount_choiced"]
+[connection signal="cancel" from="Player" to="." method="_on_Amount_cancel"]
+[connection signal="new_game" from="HUD" to="." method="_on_HUD_new_game"]
+[connection signal="start_game" from="HUD" to="." method="start_game"]

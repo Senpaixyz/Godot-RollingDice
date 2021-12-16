@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://script/Player_Box.gd" type="Script" id=1]
+[ext_resource path="res://VarelaRound-Regular.ttf" type="DynamicFontData" id=2]
+
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 2 )
+
+[node name="Player" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="5" type="Button" parent="."]
+modulate = Color( 0.235294, 1, 0.054902, 1 )
+margin_right = 58.0
+margin_bottom = 58.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 0.027451, 1, 0.886275, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 0.992157, 1, 0, 1 )
+shortcut_in_tooltip = false
+text = "5"
+
+[node name="10" type="Button" parent="."]
+modulate = Color( 0.235294, 1, 0.054902, 1 )
+margin_left = 62.9851
+margin_top = 1.36038
+margin_right = 120.985
+margin_bottom = 59.3604
+custom_fonts/font = SubResource( 1 )
+text = "10"
+
+[node name="20" type="Button" parent="."]
+modulate = Color( 0.235294, 1, 0.054902, 1 )
+margin_left = 125.861
+margin_top = 2.05871
+margin_right = 183.861
+margin_bottom = 60.0587
+custom_fonts/font = SubResource( 1 )
+text = "20"
+
+[node name="ALL" type="Button" parent="."]
+modulate = Color( 0.235294, 1, 0.054902, 1 )
+margin_left = 188.184
+margin_top = 2.05871
+margin_right = 256.184
+margin_bottom = 60.0587
+custom_fonts/font = SubResource( 1 )
+text = "ALL"
+
+[node name="Cancel" type="Button" parent="."]
+modulate = Color( 0.235294, 1, 0.054902, 1 )
+margin_left = -83.1732
+margin_top = -0.301659
+margin_right = -4.17317
+margin_bottom = 58.6983
+custom_fonts/font = SubResource( 1 )
+text = "CHG"
+[connection signal="pressed" from="5" to="." method="_on_5_pressed"]
+[connection signal="pressed" from="10" to="." method="_on_10_pressed"]
+[connection signal="pressed" from="20" to="." method="_on_20_pressed"]
+[connection signal="pressed" from="ALL" to="." method="_on_ALL_pressed"]
+[connection signal="pressed" from="Cancel" to="." method="_on_Cancel_pressed"]
